@@ -3,8 +3,11 @@ import { connect } from 'react-redux'
 import { getDogs } from '../../actions/dogs'
 
 class Dogs extends Component {
+    componentDidMount(){
+        this.props.getDogs()
+    }
     render() {
-        const dogs = this.props.dogs.map((dog, i) => <li key={id}>{dog.name}</li>
+        const dogs = this.props.dogs.map((dog, i) => <li key={i}>{dog.name}</li>
 
         )
         return(
