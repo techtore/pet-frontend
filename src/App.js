@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route
  } from "react-router-dom";
+ import Home from './components/Home'
 
 
 function App() {
@@ -18,16 +19,5 @@ function App() {
     </div> 
   );
 }
-
-const Home = () => {
-  return (
-    <div>
-      <h1>Home!</h1>
-    </div>
-  );
-};
-
-
-
 
 export default App;
