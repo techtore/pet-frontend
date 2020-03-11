@@ -1,20 +1,33 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route
+ } from "react-router-dom";
+
 
 function App() {
   return (
+   
+     
     <div className="App">
-      <Router>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-          </ul>
-        </nav>
-      </Router>
-    </div>
+       <Router>
+        <div>
+          <Route path="/" component={Home} />
+          </div>
+        </Router>
+  
+    </div> 
   );
 }
+
+const Home = () => {
+  return (
+    <div>
+      <h1>Home!</h1>
+    </div>
+  );
+};
+
+
+
 
 export default App;
