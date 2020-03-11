@@ -27,6 +27,11 @@ class Form extends Component {
        this.setState(this.initialState);
    }
 
+    submitForm = () => {
+        this.props.handleSubmit(this.state)
+        this.setState(this.initialState)
+    }
+
 
    render() {
        const {kind, name, time, description } = this.state;
@@ -63,7 +68,7 @@ class Form extends Component {
                             id="description"
                             value={description} 
                             onChange={this.handleChange}</input> 
-                <button type="submit">Submit</button>     
+                <input type="button" value="Submit" onClick={this.submitForm}></input>   
             </form>
        )
    }
