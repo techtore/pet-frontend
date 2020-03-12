@@ -10,6 +10,18 @@ export default (state = {dogs: [], loading:false}, action) => {
                 dogs: action.payload,
                 loading: false
             }
+            case "ADD_DOG":
+                return {
+                    ...state,
+                    loading: true
+                }
+        case "DOG_ADDED":
+        
+            return {
+                ...state,
+                dogs: [...dogs.state, action.payload],
+                loading: false
+            }        
         default:
             return state
     }
