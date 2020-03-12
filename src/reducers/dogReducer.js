@@ -11,11 +11,13 @@ export default (state = {dogs: [], loading:false}, action) => {
                 loading: false
             }
             case "ADD_DOG":
+                console.log("got dog to add")
                 return {
                     ...state,
                     loading: true
                 }
         case "DOG_ADDED":
+            console.log("added dog")
             return {
                 ...state,
                 dogs: [...state.dogs, action.payload],

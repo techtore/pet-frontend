@@ -8,10 +8,11 @@ export const getDogs = () => {
 }
 
 export const addDog = (dog) => {
+    debugger
     return(dispatch) => {
-        dispatch({type: "ADD_DOG"})
+        dispatch({type: "ADD_DOG"}, dog)
         return fetch('http://localhost:3000/api/v1/dogs', {
-            method: 'POST',
+            method: "POST",
             body: JSON.stringify(dog),
             headers: { 
                 'Content-Type':  'application/json'

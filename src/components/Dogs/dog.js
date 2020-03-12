@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getDogs } from '../../actions/dogs'
-import DogInput from './DogInput'
+import DogInput from '../../containers/DogInput'
 
 class Dogs extends Component {
     componentDidMount(){
@@ -13,9 +13,9 @@ class Dogs extends Component {
         )
         return(
             <div>
+                <DogInput/>
                 <h2>Your Dogs</h2>
                 <ul>{this.props.loading ? <h3>...loading dogs</h3> : dogs} </ul>
-                <DogInput/>
             </div>
         )
     }

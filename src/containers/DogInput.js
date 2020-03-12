@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { addDog } from '../../actions/dogs'
-import Dogs from './dog'
+import { addDog } from '../actions/dogs'
 
 class DogInput extends React.Component {
     state={
@@ -19,8 +18,9 @@ class DogInput extends React.Component {
     }
 
     handleSubmit = (event) => {
-        event.PreventDefault();
-        this.props.addDog(this.state)
+        event.preventDefault();
+        const dog = {...this.state}
+        this.props.addDog(dog)
         this.setState({
             name: '',
             weight: '',
@@ -35,34 +35,34 @@ class DogInput extends React.Component {
             <div>
                 <h2>Add a Dog</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <label for="name">Dog's Name:</label>
-                    <input>
+                    <label>Dog's Name:</label>
+                    <input
                         type="text"
-                        value={name}
+                        value={this.state.name}
                         name="name"
                         onChange={this.handleOnChange}
-                    </input>
-                    <label for="age">Age:</label>
-                    <input>
+                    />
+                    <label>Age(years):</label>
+                    <input
                         type="text"
-                        value={age}
+                        value={this.state.age}
                         name="age"
                         onChange={this.handleOnChange}
-                    </input>
-                    <label for="weight">Weight:</label>
-                    <input>
+                    />
+                    <label>Weight(lbs):</label>
+                    <input
                         type="text"
-                        value={weight}
+                        value={this.state.weight}
                         name="weight"
                         onChange={this.handleOnChange}
-                    </input>
-                    <label for="breed">Breed:</label>
-                    <input>
+                    />
+                    <label>Breed:</label>
+                    <input
                         type="text"
-                        value={breed}
+                        value={this.state.breed}
                         name="breed"
                         onChange={this.handleOnChange}
-                    </input>
+                    />
                     <button type="submit">Add Dog</button>
                 </form>
             </div>
