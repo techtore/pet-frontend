@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 
 class Form extends Component {
-   constructor(props) {
-       super(props);
 
-        this.initialState= {
+
+    state= {
         kind: '',
         name: '',
         time: '',
         desription: ''
         }
-        this.state = this.initialState;
-    }
+
 
    handleChange = event => {
        const { name, value } = event.target;
        this.setState({
-           [name] : value
+           [name]: value
        })
    }
 
@@ -24,7 +22,12 @@ class Form extends Component {
        event.preventDefault();
 
        this.props.handleSubmit(this.state)
-       this.setState(this.initialState);
+       this.setState({
+        kind: '',
+        name: '',
+        time: '',
+        desription: ''
+       });
    }
 
 
@@ -45,13 +48,7 @@ class Form extends Component {
                             id="name"
                             value={name} 
                             onChange={this.handleChange}/>
-                <label>Name</label>
-                <input type="text" 
-                            name="name" 
-                            id="name"
-                            value={name} 
-                            onChange={this.handleChange}/>
-                <label>Time</label>
+                <label>Time(hh:mm)</label>
                 <input type="text" 
                             name="time" 
                             id="time"
