@@ -1,31 +1,32 @@
-// import React from 'react';
-// import { connect } from "react-redux";
-// import Dropdown from "react-dropdown";
-// import dog from '../Dogs/dog';
+import React from 'react';
+import { connect } from 'react-redux'
+import { getDogs } from '../../actions/dogs'
 
-// const useReactDropdown = true;
-// const option = { value:  }
+class DailyActivitiesDropDown extends React.Component {
 
-// const DailyActivitiesDropDown = ({input}) => {
-//     return(
-//         <Dropdown
-//             {...input}
-//             options={[
-//                 {
-//                     value:
-//                 }
-//             ]}
-//         />
+    render(){
+        let dogs = this.props.state.dogs;
+        let optionItems = dogs.map(dog => 
+            <option key={dog.name}>{dog.name}</option>
+            );
 
-//     )
-// }
+            return (
+                <div>
+                    <select>
+                        {optionItems}
+                    </select>
+                </div>
+            )
+    }
+}
 
-// const mapStateToProps = state => {
-//     return{
-//         dogs: state.dogReducer.dogs 
-//     }
-// }
+const mapStateToProps = state => {
+    return{
+        dogs: state.dogReducer.dogs
+    }
+}
 
 
 
-// export default connect(mapStateToProps, { dog })(DailyActivitiesDropDown);
+
+export default connect(mapStateToProps, { getDogs })(DailyActivitiesDropDown);
