@@ -21,7 +21,7 @@ class Form extends Component {
    }
 
    onFormSubmit = event => {
-       event.preventDefault;
+       event.preventDefault();
 
        this.props.handleSubmit(this.state)
        this.setState(this.initialState);
