@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { addDog } from '../../actions/dogs'
-import DogsContainer from '../../containers/DogsContainer'
+import Dogs from './dog'
 
 class DogInput extends React.Component {
     state={
@@ -38,28 +38,28 @@ class DogInput extends React.Component {
                     <label for="name">Dog's Name:</label>
                     <input>
                         type="text"
-                        value={this.state.name}
+                        value={name}
                         name="name"
                         onChange={this.handleOnChange}
                     </input>
                     <label for="age">Age:</label>
                     <input>
                         type="text"
-                        value={this.state.age}
+                        value={age}
                         name="age"
                         onChange={this.handleOnChange}
                     </input>
                     <label for="weight">Weight:</label>
                     <input>
                         type="text"
-                        value={this.state.weight}
+                        value={weight}
                         name="weight"
                         onChange={this.handleOnChange}
                     </input>
                     <label for="breed">Breed:</label>
                     <input>
                         type="text"
-                        value={this.state.breed}
+                        value={breed}
                         name="breed"
                         onChange={this.handleOnChange}
                     </input>
@@ -70,4 +70,5 @@ class DogInput extends React.Component {
     }
 }
 
-export default DogInput;
+
+export default connect(null, {addDog})(DogInput);

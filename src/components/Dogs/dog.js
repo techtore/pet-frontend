@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { getDogs } from '../../actions/dogs'
+import DogInput from './DogInput'
 
 class Dogs extends Component {
     componentDidMount(){
@@ -14,6 +15,7 @@ class Dogs extends Component {
             <div>
                 <h2>Your Dogs</h2>
                 <ul>{this.props.loading ? <h3>...loading dogs</h3> : dogs} </ul>
+                <DogInput/>
             </div>
         )
     }
