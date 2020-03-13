@@ -1,7 +1,7 @@
 import React from 'react'
 import DailyActivitiesDropDown from './DailyActivitiesDropDown'
 import Form from './Form'
-import DailyActivitiesTable from './DailyActivitiesTable'
+// import DailyActivitiesTable from './DailyActivitiesTable'
 
 class DailyActivitiesShow extends React.Component {
     render() {
@@ -10,7 +10,7 @@ class DailyActivitiesShow extends React.Component {
                 <DailyActivitiesDropDown/>
                 <br></br>
                 <Form/>
-                <DailyActivitiesTable />
+                {/* <DailyActivitiesTable /> */}
             </div>
         )
     }
