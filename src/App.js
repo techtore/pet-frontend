@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route
  import Home from './components/Home'
  import NavBar from './components/NavBar';
  import Dogs from './components/Dogs/dog';
- import DailyActivities from './components/DailyActivities/DailyActivities'
+ import DailyActivities from './containers/DailyActivities'
 
 
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { DailyActivitiesTable } from '../components/DailyActivities/DailyActivitiesTable'
 // import { getDailyActivities } from '../../actions/dailyActivities'
 
 
@@ -12,7 +13,7 @@ class DailyActivities extends Component {
 
         return(
             <div>
-               
+               <DailyActivitiesTable/>
             </div>
         )
     }
