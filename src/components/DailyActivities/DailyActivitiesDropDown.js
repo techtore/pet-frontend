@@ -9,12 +9,17 @@ class DailyActivitiesDropDown extends Component {
     }
 
     render() {
-      
+    const dogList = this.props.dogs.map((dog) => {
+    debugger
+        return  {label: dog.name,
+                  value: dog,
+                  key: dog.id
+        }
+    })
+    debugger
         return(
-            <div>
-                <Select> 
-                {this.props.dogs.map((dog) => <options key={dog.id} value={dog.name}>Select a dog </options>)}
-                </Select>
+            <div> 
+                <Select options={dogList}  onChnage={this.handleChange}/> 
             </div>
         )
     }
@@ -22,8 +27,7 @@ class DailyActivitiesDropDown extends Component {
 
 const mapStateToProps = state => {
     return{
-        dogs: state.dogReducer.dogs,
-        loading: state.dogReducer.loading
+        dogs: state.dogReducer.dogs
     }
 }
 
