@@ -13,13 +13,13 @@ class DailyActivitiesDropDown extends Component {
     
         return  {label: dog.name,
                   value: dog,
-                  key: dog.id
+                  key_disabled: true 
         }
     })
     
         return(
             <div> 
-                <Select options={dogList} /> 
+                <Select options={dogList}  /> 
             </div>
         )
     }

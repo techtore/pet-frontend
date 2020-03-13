@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route
  import Home from './components/Home'
  import NavBar from './components/NavBar';
  import Dogs from './components/Dogs/dog';
- import DailyActivitiesShow from './components/DailyActivities/DailyActivitiesShow'
+ import DailyActivities from './components/DailyActivities/DailyActivities'
 
 
 
@@ -17,8 +17,8 @@ class App extends React.Component {
           <div>
             <NavBar />
             <Route exact path="/" component={Home} />
-            <Route exact path="/api/v1/dogs" component={Dogs}></Route>
-            <Route exact path="/daily_activities" component={DailyActivitiesShow}></Route>
+            <Route exact path="/dogs" component={Dogs}></Route>
+            <Route exact path="/dogs/:dogId/activities" component={DailyActivities}></Route>
             </div>
           </Router>
       </div> 

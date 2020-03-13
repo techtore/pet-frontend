@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getDailyActivities } from '../../actions/dailyActivities'
+// import { getDailyActivities } from '../../actions/dailyActivities'
 
 
 class DailyActivities extends Component {
-    componentDidMount(){
-        this.props.getDailyActivities()
-    }
+
+  
     render() {
-       
+        const dog = this.props.dogs.filter(dog => dog.id == this.props.match.params.dogId)
+        debugger
+
         return(
             <div>
                
@@ -18,10 +19,12 @@ class DailyActivities extends Component {
 }
 
 const mapStateToProps = state => {
+    debugger
     return{
+        
         dogs: state.dogReducer.dogs,
         loading: state.dogReducer.loading
     }
 }
 
-export default connect(mapStateToProps, {getDailyActivities})(DailyActivities);
+export default connect(mapStateToProps)(DailyActivities);
