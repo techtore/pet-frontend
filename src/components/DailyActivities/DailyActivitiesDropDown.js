@@ -10,16 +10,16 @@ class DailyActivitiesDropDown extends Component {
 
     render() {
     const dogList = this.props.dogs.map((dog) => {
-    debugger
+    
         return  {label: dog.name,
                   value: dog,
                   key: dog.id
         }
     })
-    debugger
+    
         return(
             <div> 
-                <Select options={dogList}  onChnage={this.handleChange}/> 
+                <Select options={dogList} /> 
             </div>
         )
     }
