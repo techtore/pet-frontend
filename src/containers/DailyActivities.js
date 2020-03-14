@@ -1,22 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ReactTable from 'react-table'
-
-// import { DailyActivitiesTable } from '../components/DailyActivities/DailyActivitiesTable'
-// import { getDailyActivities } from '../../actions/dailyActivities'
+import { getDailyActivities } from '../actions/dailyActivities'
 
 
 class DailyActivities extends Component {
-  state= {
-      activiies: []
-  }
 
   componentDidMount(){
       this.props.getDailyActivities();
+      debugger
   }
     render() {
         // const dog = this.props.dogs.filter(dog => dog.id == this.props.match.params.dogId)
-        // debugger
         const columns = [
             {
                 Header: "Date (MM/DD/YY)",
@@ -55,9 +50,9 @@ const mapStateToProps = state => {
     debugger
     return{
         
-        dogs: state.dogReducer.dogs,
-        loading: state.dogReducer.loading
+        activities: state.activitiesReducer.dailyActivities,
+        loading: state.activitiesReducer.loading
     }
 }
 
-export default connect(mapStateToProps)(DailyActivities);
+export default connect(mapStateToProps, {getDailyActivities})(DailyActivities);
