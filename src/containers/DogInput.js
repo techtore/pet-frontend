@@ -63,7 +63,9 @@ class DogInput extends React.Component {
                         name="breed"
                         onChange={this.handleOnChange}
                     />
+                
                     <button type="submit">Add Dog</button>
+                
                 </form>
             </div>
         )
