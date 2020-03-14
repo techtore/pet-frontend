@@ -55,6 +55,6 @@ class DailyActivities extends Component {
 //     }
 // }
 
-export default (DailyActivities);
+export default DailyActivities;
 
 // connect(mapStateToProps, {getDailyActivities})

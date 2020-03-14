@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 import { getDogs } from '../../actions/dogs'
 import DogInput from '../../containers/DogInput'
 import DailyActivities from '../../containers/DailyActivities'
@@ -18,7 +18,11 @@ class Dogs extends Component {
                 <DogInput/>
                 <h2>Your Dogs</h2>
                 <ul>{this.props.loading ? <h3>...loading dogs</h3> : dogs} </ul>
+                
+                <Route path="/dogs/:dogId/activities" component={DailyActivities} exact/>
+                
             </div>
+           
         )
     }
 }
