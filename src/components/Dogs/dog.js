@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { Link } from 'react-router-dom';
 import { getDogs } from '../../actions/dogs'
 import DogInput from '../../containers/DogInput'
 
@@ -8,7 +9,7 @@ class Dogs extends Component {
         this.props.getDogs()
     }
     render() {
-        const dogs = this.props.dogs.map((dog, i) => <li key={i}>{dog.name}</li>
+        const dogs = this.props.dogs.map((dog, i) => <li key={i}><Link to="/dogs/:dogId/activities">{dog.name}</Link></li>
 
         )
         return(

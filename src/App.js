@@ -18,7 +18,7 @@ class App extends React.Component {
             <NavBar />
             <Route exact path="/" component={Home} />
             <Route exact path="/dogs" component={Dogs}></Route>
-            <Route exact path="/dogs/:dogId/activities" component={DailyActivities}></Route>
+            {/* <Route exact path="/dogs/:dogId/activities" component={DailyActivities}></Route> */}
             </div>
           </Router>
       </div> 
