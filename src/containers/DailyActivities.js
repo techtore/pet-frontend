@@ -38,9 +38,7 @@ class DailyActivities extends Component {
           
             <div>
                Daily Activities Container
-              {/* <ReactTable 
-              columns={columns} >
-              </ReactTable> */}
+             
             </div>
         )
     }
@@ -58,3 +56,6 @@ class DailyActivities extends Component {
 export default DailyActivities;
 
 // connect(mapStateToProps, {getDailyActivities})
+ /* <ReactTable 
+              columns={columns} >
+              </ReactTable> */

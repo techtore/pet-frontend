@@ -9,17 +9,19 @@ class Dogs extends Component {
     componentDidMount(){
         this.props.getDogs()
     }
-    render() {
-        const dogs = this.props.dogs.map((dog, i) => <li key={i}><Link to={{pathname: `/dogs/${dog.id}/activities`}}>{dog.name}</Link></li>
 
-        )
+    render() {
+
         return(
             <div>
                 <DogInput/>
                 <h2>Your Dogs</h2>
-                <ul>{this.props.loading ? <h3>...loading dogs</h3> : dogs} </ul>
-                
-                <Route path="/dogs/:dogId/activities" component={DailyActivities} exact/>
+                <ul>
+                    {this.props.loading ? <h3>...loading dogs</h3> : this.props.dogs.map((dog, id) => <li key={id}><Link to={`/dogs/${dog.id}/activities`}>{dog.name}</Link></li>)}
+                </ul>
+                <hr />
+               
+                <Route path={`/dogs/:dogId/activities`} component={DailyActivities}/>
                 
             </div>
            
