@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 import { getDogs } from '../../actions/dogs'
 import DogInput from '../../containers/DogInput'
+import DailyActivities from '../../containers/DailyActivities'
 
 class Dogs extends Component {
     componentDidMount(){

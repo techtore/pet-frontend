@@ -1,58 +1,60 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import ReactTable from 'react-table'
-import { getDailyActivities } from '../actions/dailyActivities'
+// import { connect } from 'react-redux'
+// import ReactTable from 'react-table'
+// import { getDailyActivities } from '../actions/dailyActivities'
 
 
 class DailyActivities extends Component {
 
-  componentDidMount(){
-      this.props.getDailyActivities();
-      debugger
-  }
+//   componentDidMount(){
+//       this.props.getDailyActivities(dog);
+//       debugger
+//   }
     render() {
         // const dog = this.props.dogs.filter(dog => dog.id == this.props.match.params.dogId)
-        const columns = [
-            {
-                Header: "Date (MM/DD/YY)",
-                accessor: "date", 
-             },
-            {
-               Header: "Kind",
-               accessor: "kind", 
-            },
-            {
-                Header: "Name",
-                accessor: "name", 
-             },
-             {
-                Header: "Time (hh:mm)",
-                accessor: "kind", 
-             },
-             {
-                Header: "Description",
-                accessor: "description", 
-             }
-        ]
+        // const columns = [
+        //     {
+        //         Header: "Date (MM/DD/YY)",
+        //         accessor: "date", 
+        //      },
+        //     {
+        //        Header: "Kind",
+        //        accessor: "kind", 
+        //     },
+        //     {
+        //         Header: "Name",
+        //         accessor: "name", 
+        //      },
+        //      {
+        //         Header: "Time (hh:mm)",
+        //         accessor: "kind", 
+        //      },
+        //      {
+        //         Header: "Description",
+        //         accessor: "description", 
+        //      }
+        // ]
         return(
           
             <div>
                Daily Activities Container
-              <ReactTable 
+              {/* <ReactTable 
               columns={columns} >
-              </ReactTable>
+              </ReactTable> */}
             </div>
         )
     }
 }
 
-const mapStateToProps = state => {
-    debugger
-    return{
+// const mapStateToProps = state => {
+//     debugger
+//     return{
         
-        activities: state.activitiesReducer.dailyActivities,
-        loading: state.activitiesReducer.loading
-    }
-}
+//         activities: state.activitiesReducer.dailyActivities,
+//         loading: state.activitiesReducer.loading
+//     }
+// }
 
-export default connect(mapStateToProps, {getDailyActivities})(DailyActivities);
+export default (DailyActivities);
+
+// connect(mapStateToProps, {getDailyActivities})
