@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// import { Link } from 'react-router-dom';
 // import { connect } from 'react-redux'
 // import ReactTable from 'react-table'
 // import { getDailyActivities } from '../actions/dailyActivities'
@@ -11,6 +12,15 @@ class DailyActivities extends Component {
 //       debugger
 //   }
     render() {
+    
+
+        return(
+            <div>
+               Daily Activities 
+             
+            </div>
+        )
+    }
         // const dog = this.props.dogs.filter(dog => dog.id == this.props.match.params.dogId)
         // const columns = [
         //     {
@@ -34,18 +44,11 @@ class DailyActivities extends Component {
         //         accessor: "description", 
         //      }
         // ]
-        return(
-          
-            <div>
-               Daily Activities 
-             
-            </div>
-        )
-    }
+
 }
 
 // const mapStateToProps = state => {
-//     debugger
+//     // debugger
 //     return{
         
 //         activities: state.activitiesReducer.dailyActivities,
@@ -53,9 +56,10 @@ class DailyActivities extends Component {
 //     }
 // }
 
-export default DailyActivities;
-
+export default(DailyActivities);
 // connect(mapStateToProps, {getDailyActivities})
+
+// 
  /* <ReactTable 
               columns={columns} >
               </ReactTable> */
