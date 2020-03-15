@@ -37,7 +37,7 @@ class DailyActivities extends Component {
         return(
           
             <div>
-               Daily Activities Container
+               Daily Activities 
              
             </div>
         )

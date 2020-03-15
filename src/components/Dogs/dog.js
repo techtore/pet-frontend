@@ -21,7 +21,7 @@ class Dogs extends Component {
                 </ul>
                 <hr />
                
-                <Route path={`/dogs/:dogId/activities`} component={DailyActivities}/>
+                <Route path={`/dogs/:dogId/activities`} render={props => <DailyActivities {...props}/>}/>
                 
             </div>
            
