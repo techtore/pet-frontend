@@ -7,6 +7,7 @@ export default (state = {dailyActivities: [], loading:false}, action) => {
             }
         case "ACTIVITIES_LOADED":
             return {
+                ...state,
                 dailyActivities: action.payload,
                 loading: false
             }

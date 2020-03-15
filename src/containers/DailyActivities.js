@@ -1,65 +1,44 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom';
-// import { connect } from 'react-redux'
-// import ReactTable from 'react-table'
-// import { getDailyActivities } from '../actions/dailyActivities'
+import { connect } from 'react-redux'
+import { getDailyActivities } from '../actions/dailyActivities'
+import Form from '../components/DailyActivities/Form'
+// import dog from '../components/Dogs/dog'
 
 
 class DailyActivities extends Component {
-
-//   componentDidMount(){
-//       this.props.getDailyActivities(dog);
-//       debugger
-//   }
+   componentDidMount(dogId){
+       debugger
+       this.props.getDailyActivities(dogId)
+   }
     render() {
-    
-
+        debugger
+        const dogs = this.props.dogs.map((dog, i) => <li key={i}>{dog.daily_activities.date}</li>)
+       
         return(
             <div>
                Daily Activities 
-             
+               <div>
+                   <ul>
+                       {dogs}
+                   </ul>
+               </div>
+          
+               <Form/>
             </div>
         )
     }
-        // const dog = this.props.dogs.filter(dog => dog.id == this.props.match.params.dogId)
-        // const columns = [
-        //     {
-        //         Header: "Date (MM/DD/YY)",
-        //         accessor: "date", 
-        //      },
-        //     {
-        //        Header: "Kind",
-        //        accessor: "kind", 
-        //     },
-        //     {
-        //         Header: "Name",
-        //         accessor: "name", 
-        //      },
-        //      {
-        //         Header: "Time (hh:mm)",
-        //         accessor: "kind", 
-        //      },
-        //      {
-        //         Header: "Description",
-        //         accessor: "description", 
-        //      }
-        // ]
 
 }
 
-// const mapStateToProps = state => {
-//     // debugger
-//     return{
-        
-//         activities: state.activitiesReducer.dailyActivities,
-//         loading: state.activitiesReducer.loading
-//     }
-// }
+const mapStateToProps = state => {
 
-export default(DailyActivities);
-// connect(mapStateToProps, {getDailyActivities})
+    return{
+        dailyActivities: state.dailyActivities,
+        loading: state.loading
+    }
+}
 
-// 
- /* <ReactTable 
-              columns={columns} >
-              </ReactTable> */
+export default connect(mapStateToProps, {getDailyActivities})(DailyActivities);
+
+
+ 
