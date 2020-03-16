@@ -19,11 +19,12 @@ class Dogs extends Component {
                 <DogInput/>
                 <h2>Your Dogs</h2>
                 <ul>
-                    {this.props.loading ? <h3>...loading dogs</h3> : this.props.dogs.map((dog, i) => <li key={i}><Link to={`${match.path}/${dog.id}/activities`}>{dog.name}</Link></li>)}
+                    {this.props.loading ? <h3>...loading dogs</h3> : this.props.dogs.map((dog, i) => <li key={i}><Link to={`${match.path}/${dog.id}`}>{dog.name}</Link></li>
+                    )}
                 </ul>
                 <hr />
                 <Switch>
-                    <Route path={`${match.path}/:dogId/activities`} render={props  => <DailyActivities {...props}/>}/>
+                    <Route path={`${match.path}/:dogId`} render={props  => <DailyActivities {...props}/>}/>
                 </Switch>
                 
             </div>

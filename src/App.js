@@ -5,8 +5,7 @@ import { BrowserRouter as Router, Route
  import Home from './components/Home'
  import NavBar from './components/NavBar';
  import Dogs from './components/Dogs/dog';
-
-
+ import DailyActivities from './containers/DailyActivities'
 
 
 class App extends React.Component {
@@ -19,6 +18,7 @@ class App extends React.Component {
             <Route exact path="/" component={Home} />
             <Route path="/dogs" render={props => <Dogs {...props}/>}/>
             </div>
+            <Route exact path="/dogs/:dogId/activities" component={DailyActivities}/>
           </Router>
       </div> 
     );
