@@ -9,7 +9,8 @@ class Form extends Component {
         kind: '',
         name: '',
         time: '',
-        description: ''
+        description: '',
+        dogId: ''
         }
 
 

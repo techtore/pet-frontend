@@ -1,8 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Form from '../components/DailyActivities/Form'
-// import dog from '../components/Dogs/dog'
-
 
 class DailyActivities extends React.Component {
   
@@ -33,7 +31,7 @@ class DailyActivities extends React.Component {
 }
 
 const mapStateToProps = state => {
-    // debugger
+    
     return{
         dogs: state.dogReducer.dogs,
         loading: state.dogReducer.loading
