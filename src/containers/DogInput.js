@@ -29,7 +29,6 @@ class DogInput extends React.Component {
         })
     }
 
-
     render() {
         return (
             <div>
