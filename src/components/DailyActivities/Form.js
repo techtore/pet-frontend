@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
+import {addActivity} from '../../actions/dailyActivities'
 
 class Form extends Component {
 
     state= {
+        date: '',
         kind: '',
         name: '',
         time: '',
-        desription: ''
+        description: ''
         }
 
 
@@ -19,26 +22,34 @@ class Form extends Component {
 
    onFormSubmit = event => {
        event.preventDefault();
+       const activity = {...this.state}
 
-       this.props.handleSubmit(this.state)
+       this.props.addActivity(activity, this.props.dogId)
        this.setState({
         kind: '',
         name: '',
         time: '',
-        desription: ''
+        description: ''
        });
    }
 
+  
 
    render() {
-       const {kind, name, time, description } = this.state;
+       const {date, kind, name, time, description } = this.state;
 
         return (       
             <form onSubmit={this.onFormSubmit}>
+                <label>Date(MM/DD/YY)</label>
+                <input type="text" 
+                            name="date" 
+                            id="date"
+                            value={date} 
+                            onChange={this.handleChange}/>
                 <label>Kind</label>
                 <input type="text" 
                             name="kind" 
-                            id="name"
+                            id="kind"
                             value={kind} 
                             onChange={this.handleChange}/>
                 <label>Name</label>
@@ -65,4 +76,5 @@ class Form extends Component {
    }
 }
 
-export default Form;
+
+export default connect(null, {addActivity})(Form);

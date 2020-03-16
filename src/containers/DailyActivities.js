@@ -5,12 +5,15 @@ import Form from '../components/DailyActivities/Form'
 
 
 class DailyActivities extends React.Component {
+  
 
     render (){
-   
-        debugger
+       
         let dog = this.props.dogs.filter(dog => dog.id == this.props.match.params.dogId)[0]
-        const activitiesList = dog.daily_activities.map((activity, i) => <li key={i}>{activity.date}</li>)
+        const activitiesList = dog.daily_activities.map((activity, i) => <li key={i}><strong>{activity.date}</strong><br/>{activity.time}<br/>
+        <br/>Kind: {activity.kind}<br/><br/>Name: {activity.name}<br/><br/>Description: {activity.description}<br/>
+        
+        </li>)
         const activity = activitiesList.length === 0 ? "No activities" : activitiesList
 
         return(
@@ -18,10 +21,10 @@ class DailyActivities extends React.Component {
                Daily Activities 
                <div>
                    <h2>{dog.name}'s Activities</h2>
-                       {activity}
+                       <ul>{activity}</ul>
                    
                </div>
-          
+            <strong><p>Add a new Activity</p></strong>
                <Form/>
             </div>
         )
