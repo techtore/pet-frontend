@@ -22,7 +22,27 @@ export default (state = {dogs: [], loading:false}, action) => {
                 ...state,
                 dogs: [...state.dogs, action.payload],
                 loading: false
-            }        
+            }  
+            
+        case "ADD_ACTIVITY":
+            return{
+                ...state,
+                loading: true
+            }
+        case "ACTIVITY_ADDED":
+            let dog = state.dogs.filter(dog => dog.id === action.payload.dog_id)[0]
+            let newActivity = {
+                ...dog,
+                daily_activities: [...dog.daily_activities, action.payload]
+            }
+
+            let dogs = state.dogs.filter(dog => dog.id !== action.payload.dog_id)
+
+            return{
+                ...state,
+                dogs: [...dogs, newActivity],
+                loading: false
+            }
         default:
             return state
     }

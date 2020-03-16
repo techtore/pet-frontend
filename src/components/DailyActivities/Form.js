@@ -10,9 +10,8 @@ class Form extends Component {
         name: '',
         time: '',
         description: '',
-        dogId: ''
-        }
-
+        dog_id: '' 
+    }
 
    handleChange = event => {
        const { name, value } = event.target;
@@ -25,16 +24,15 @@ class Form extends Component {
        event.preventDefault();
        const activity = {...this.state}
 
-       this.props.addActivity(activity, this.props.dogId)
+       this.props.addActivity(activity, this.props.id)
        this.setState({
+        date: '',
         kind: '',
         name: '',
         time: '',
         description: ''
        });
    }
-
-  
 
    render() {
        const {date, kind, name, time, description } = this.state;

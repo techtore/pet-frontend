@@ -23,7 +23,7 @@ class DailyActivities extends React.Component {
                    
                </div>
             <strong><p>Add a new Activity</p></strong>
-               <Form/>
+               <Form id={this.props.match.params.dogId}/>
             </div>
         )
 
