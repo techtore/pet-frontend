@@ -4,7 +4,6 @@ import Form from '../components/DailyActivities/Form'
 
 class DailyActivities extends React.Component {
   
-
     render (){
        
         let dog = this.props.dogs.filter(dog => dog.id == this.props.match.params.dogId)[0]

@@ -10,7 +10,6 @@ class Dogs extends Component {
         this.props.getDogs()
     }
 
-
     render() {
         const {match} = this.props;
 

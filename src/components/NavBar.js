@@ -9,7 +9,6 @@ const links = {
   color: 'white'
 }
 
-
 const NavBar = () => {
   return (
     <div className="navbar">
