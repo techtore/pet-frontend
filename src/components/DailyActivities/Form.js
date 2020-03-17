@@ -39,31 +39,31 @@ class Form extends Component {
 
         return (       
             <form onSubmit={this.onFormSubmit}>
-                <label>Date(MM/DD/YY)</label>
+                <label>Date(MM/DD/YY):</label>
                 <input type="text" 
                             name="date" 
                             id="date"
                             value={date} 
                             onChange={this.handleChange}/>
-                <label>Kind</label>
+                <label>Kind:</label>
                 <input type="text" 
                             name="kind" 
                             id="kind"
                             value={kind} 
                             onChange={this.handleChange}/>
-                <label>Name</label>
+                <label>Name:</label>
                 <input type="text" 
                             name="name" 
                             id="name"
                             value={name} 
                             onChange={this.handleChange}/>
-                <label>Time(hh:mm)</label>
+                <label>Time(hh:mm):</label>
                 <input type="text" 
                             name="time" 
                             id="time"
                             value={time} 
                             onChange={this.handleChange}/>
-                <label>Description</label>
+                <label>Description:</label>
                 <input type="text" 
                             name="description" 
                             id="description"

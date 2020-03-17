@@ -5,8 +5,9 @@ const links = {
   width: '100px',
   padding: '12px',
   margin: '0 6px 6px',
-  background: 'purple',
-  color: 'white'
+  background: '#abb8c3',
+  color: 'white',
+  borderRadius: '5px'
 }
 
 const NavBar = () => {

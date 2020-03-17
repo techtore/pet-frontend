@@ -7,8 +7,8 @@ class DailyActivities extends React.Component {
     render (){
        
         let dog = this.props.dogs.filter(dog => dog.id == this.props.match.params.dogId)[0]
-        const activitiesList = dog.daily_activities.map((activity, i) => <p key={i}><strong>{activity.date}</strong><br/>{activity.time}<br/>
-        <br/>Kind: {activity.kind}<br/><br/>Name: {activity.name}<br/><br/>Description: {activity.description}<br/>
+        const activitiesList = dog.daily_activities.map((activity, i) => <p key={i}><strong>{activity.date}</strong><br/><strong>Time: </strong>{activity.time}<br/>
+        <br/><strong>Kind:</strong> {activity.kind}<br/><br/><strong>Name:</strong> {activity.name}<br/><br/><strong>Description: </strong>{activity.description}<br/>
         
         </p>)
         const activity = activitiesList.length === 0 ? "No activities" : activitiesList
@@ -17,10 +17,10 @@ class DailyActivities extends React.Component {
             <div>
                <div>
                    <h2>{dog.name}'s Activities</h2>
-                       <ul>{activity}</ul>
+                       {activity}
                    
                </div>
-            <strong><p>Add a new Activity</p></strong>
+            <strong><h3>Add a new Activity</h3></strong>
                <Form id={this.props.match.params.dogId}/>
             </div>
         )
