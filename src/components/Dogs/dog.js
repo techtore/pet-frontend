@@ -17,12 +17,14 @@ class Dogs extends Component {
             <div>
                 <DogInput/>
                 <h2>Your Dogs</h2>
-                <ul>
+                
                     {this.props.loading ? <h3>...loading dogs</h3> : this.props.dogs.map((dog, i) => <p key={i}><Link to={`${match.path}/${dog.id}`}>{dog.name}</Link></p>
                     )}
-                </ul>
+               
                 <hr />
-                    <Route path={`${match.path}/:dogId`} render={props  => <DailyActivities {...props}/>}/>
+               
+                <Route path={`${match.path}/:dogId`} render={props  => <DailyActivities {...props}/>}/>
+               
             </div>
            
         )
