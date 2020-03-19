@@ -5,8 +5,7 @@ import { BrowserRouter as Router, Route
  import Home from './components/Home'
  import NavBar from './components/NavBar';
  import Dogs from './components/Dogs/dog';
- import Resources from './components/Resources'
-
+ import Resources from './components/Resources';
 
 class App extends React.Component {
   render() {  
@@ -15,7 +14,6 @@ class App extends React.Component {
         <Router>
           <div>
             <NavBar />
-            
             <Route exact path="/" component={Home} />
             <Route path="/dogs" render={props => <Dogs {...props}/>}/>
             <Route exact path="/resources" component={Resources} />
