@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Form from '../components/DailyActivities/Form'
+import SearchBox from '../components/search-box'
 
 class DailyActivities extends React.Component {
   
