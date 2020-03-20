@@ -17,8 +17,7 @@ class DailyActivities extends React.Component {
             <div>
                <div>
                    <h2>{dog.name}'s Activities</h2>
-                       {activity}
-                   
+                       {activity}  
                </div>
             <strong><h3>Add a new Activity</h3></strong>
                <Form id={this.props.match.params.dogId}/>
