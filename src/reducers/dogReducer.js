@@ -1,4 +1,4 @@
-export default (state = {dogs: [], loading:false}, action) => {
+export default (state = {dogs: [], loading:false, value: ''}, action) => {
     switch(action.type){
         case "LOADING_DOGS":
             return {
@@ -43,6 +43,7 @@ export default (state = {dogs: [], loading:false}, action) => {
                 dogs: [...dogs, newActivity],
                 loading: false
             }
+
         default:
             return state
     }

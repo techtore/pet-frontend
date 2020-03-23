@@ -3,10 +3,11 @@ import { connect } from 'react-redux'
 import { getDogs } from '../../actions/dogs'
 
 class DogInfo extends React.Component{
+
     componentDidMount(){
         this.props.getDogs()
     }
-
+    
     render() {
         
         let dogsList = this.props.dogs.map((dog, i) => 
@@ -15,7 +16,7 @@ class DogInfo extends React.Component{
                 <h2>{dog.name}</h2>
                 <p><strong>Age: </strong>{dog.age}</p>
                 <p><strong>Breed: </strong>{dog.breed}</p>
-                <p><strong>Weight: </strong>{dog.weight}</p>
+                <p><strong>Weight: </strong>{dog.weight}</p>  
             </div>
         )
 

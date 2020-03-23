@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Form from '../components/DailyActivities/Form'
-import SearchBox from '../components/search-box'
+
 
 class DailyActivities extends React.Component {
-  
+
     render (){
-       
+    
         let dog = this.props.dogs.filter(dog => dog.id == this.props.match.params.dogId)[0]
         const activitiesList = dog.daily_activities.map((activity, i) => <p key={i}><strong>{activity.date}</strong><br/><strong>Time: </strong>{activity.time}<br/>
         <br/><strong>Kind:</strong> {activity.kind}<br/><br/><strong>Name:</strong> {activity.name}<br/><br/><strong>Description: </strong>{activity.description}<br/>
@@ -17,6 +17,7 @@ class DailyActivities extends React.Component {
         return(
             <div>
                <div>
+
                    <h2>{dog.name}'s Activities</h2>
                        {activity}  
                </div>

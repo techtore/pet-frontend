@@ -6,25 +6,27 @@ import DogInput from '../../containers/DogInput'
 import DailyActivities from '../../containers/DailyActivities'
 
 class Dogs extends Component {
+
     componentDidMount(){
         this.props.getDogs()
     }
 
+  
     render() {
         const {match} = this.props;
 
         return(
             <div>
                 <DogInput/>
+
                 <h2>Your Dogs</h2>
-                
+
                     {this.props.loading ? <h3>...loading dogs</h3> : this.props.dogs.map((dog, i) => <p key={i}><Link to={`${match.path}/${dog.id}`}>{dog.name}</Link></p>
                     )}
                
                 <hr />
                
                 <Route path={`${match.path}/:dogId`} render={props  => <DailyActivities {...props}/>}/>
-               
             </div>
            
         )
